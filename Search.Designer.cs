@@ -23,11 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             this.uxPlayerList = new System.Windows.Forms.ListView();
             this.uxPlayerIdColumn = new System.Windows.Forms.ColumnHeader();
             this.uxPlayerNameColumn = new System.Windows.Forms.ColumnHeader();
@@ -55,14 +55,10 @@
             this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.uxDefensiveList = new System.Windows.Forms.ListView();
             this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader24 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader25 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader26 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader27 = new System.Windows.Forms.ColumnHeader();
@@ -90,6 +86,8 @@
             this.columnHeader41 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader42 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader43 = new System.Windows.Forms.ColumnHeader();
+            this.uxScheduleWeek = new System.Windows.Forms.TextBox();
+            this.uxPlayerId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // uxPlayerList
@@ -103,7 +101,7 @@
             this.uxPlayerList.FullRowSelect = true;
             this.uxPlayerList.GridLines = true;
             this.uxPlayerList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem1});
             this.uxPlayerList.Location = new System.Drawing.Point(12, 12);
             this.uxPlayerList.Name = "uxPlayerList";
             this.uxPlayerList.RightToLeftLayout = true;
@@ -187,6 +185,7 @@
             // 
             // uxTeamComboBox
             // 
+            this.uxTeamComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uxTeamComboBox.FormattingEnabled = true;
             this.uxTeamComboBox.Items.AddRange(new object[] {
             "ARI",
@@ -221,11 +220,10 @@
             "TAM",
             "TEN",
             "WAS"});
-            this.uxTeamComboBox.Location = new System.Drawing.Point(925, 135);
+            this.uxTeamComboBox.Location = new System.Drawing.Point(1190, 121);
             this.uxTeamComboBox.Name = "uxTeamComboBox";
-            this.uxTeamComboBox.Size = new System.Drawing.Size(121, 23);
+            this.uxTeamComboBox.Size = new System.Drawing.Size(141, 33);
             this.uxTeamComboBox.TabIndex = 6;
-            this.uxTeamComboBox.Text = "Select Team";
             // 
             // uxOffensiveList
             // 
@@ -245,13 +243,12 @@
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18,
-            this.columnHeader19,
             this.columnHeader3});
             this.uxOffensiveList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.uxOffensiveList.FullRowSelect = true;
             this.uxOffensiveList.GridLines = true;
             this.uxOffensiveList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
+            listViewItem2});
             this.uxOffensiveList.Location = new System.Drawing.Point(12, 12);
             this.uxOffensiveList.Name = "uxOffensiveList";
             this.uxOffensiveList.RightToLeftLayout = true;
@@ -335,11 +332,6 @@
             this.columnHeader18.Text = "StandardFantasyPoints";
             this.columnHeader18.Width = 140;
             // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "WeekNumber";
-            this.columnHeader19.Width = 80;
-            // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "GameId";
@@ -349,9 +341,6 @@
             this.uxDefensiveList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader20,
             this.columnHeader21,
-            this.columnHeader22,
-            this.columnHeader23,
-            this.columnHeader24,
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader27,
@@ -365,7 +354,7 @@
             this.uxDefensiveList.FullRowSelect = true;
             this.uxDefensiveList.GridLines = true;
             this.uxDefensiveList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem3});
             this.uxDefensiveList.Location = new System.Drawing.Point(12, 12);
             this.uxDefensiveList.Name = "uxDefensiveList";
             this.uxDefensiveList.RightToLeftLayout = true;
@@ -383,20 +372,6 @@
             // 
             this.columnHeader21.Text = "GameId";
             this.columnHeader21.Width = 70;
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "TeamWeeklyId";
-            this.columnHeader22.Width = 120;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "Week";
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "WeekRank";
-            this.columnHeader24.Width = 90;
             // 
             // columnHeader25
             // 
@@ -453,7 +428,7 @@
             this.uxScheduleList.FullRowSelect = true;
             this.uxScheduleList.GridLines = true;
             this.uxScheduleList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem4});
             this.uxScheduleList.Location = new System.Drawing.Point(12, 12);
             this.uxScheduleList.Name = "uxScheduleList";
             this.uxScheduleList.RightToLeftLayout = true;
@@ -485,25 +460,25 @@
             // uxNameBox
             // 
             this.uxNameBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxNameBox.Location = new System.Drawing.Point(1166, 144);
+            this.uxNameBox.Location = new System.Drawing.Point(1052, 122);
             this.uxNameBox.Name = "uxNameBox";
             this.uxNameBox.PlaceholderText = "Enter Name";
-            this.uxNameBox.Size = new System.Drawing.Size(150, 32);
+            this.uxNameBox.Size = new System.Drawing.Size(132, 32);
             this.uxNameBox.TabIndex = 10;
             // 
             // uxPositionBox
             // 
             this.uxPositionBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxPositionBox.Location = new System.Drawing.Point(1322, 144);
+            this.uxPositionBox.Location = new System.Drawing.Point(1052, 160);
             this.uxPositionBox.Name = "uxPositionBox";
             this.uxPositionBox.PlaceholderText = "Enter Position";
-            this.uxPositionBox.Size = new System.Drawing.Size(150, 32);
+            this.uxPositionBox.Size = new System.Drawing.Size(132, 32);
             this.uxPositionBox.TabIndex = 11;
             // 
             // uxTop25Button
             // 
             this.uxTop25Button.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTop25Button.Location = new System.Drawing.Point(911, 194);
+            this.uxTop25Button.Location = new System.Drawing.Point(1308, 369);
             this.uxTop25Button.Name = "uxTop25Button";
             this.uxTop25Button.Size = new System.Drawing.Size(150, 33);
             this.uxTop25Button.TabIndex = 12;
@@ -514,7 +489,7 @@
             // uxTop25Box
             // 
             this.uxTop25Box.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTop25Box.Location = new System.Drawing.Point(911, 233);
+            this.uxTop25Box.Location = new System.Drawing.Point(1308, 408);
             this.uxTop25Box.Name = "uxTop25Box";
             this.uxTop25Box.PlaceholderText = "Enter Week";
             this.uxTop25Box.Size = new System.Drawing.Size(150, 32);
@@ -535,7 +510,7 @@
             this.uxTop25List.FullRowSelect = true;
             this.uxTop25List.GridLines = true;
             this.uxTop25List.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10});
+            listViewItem5});
             this.uxTop25List.Location = new System.Drawing.Point(12, 12);
             this.uxTop25List.Name = "uxTop25List";
             this.uxTop25List.RightToLeftLayout = true;
@@ -580,11 +555,31 @@
             // 
             this.columnHeader43.Text = "TouchdownsScored";
             // 
+            // uxScheduleWeek
+            // 
+            this.uxScheduleWeek.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uxScheduleWeek.Location = new System.Drawing.Point(911, 122);
+            this.uxScheduleWeek.Name = "uxScheduleWeek";
+            this.uxScheduleWeek.PlaceholderText = "Enter Week";
+            this.uxScheduleWeek.Size = new System.Drawing.Size(135, 32);
+            this.uxScheduleWeek.TabIndex = 15;
+            // 
+            // uxPlayerId
+            // 
+            this.uxPlayerId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uxPlayerId.Location = new System.Drawing.Point(1337, 122);
+            this.uxPlayerId.Name = "uxPlayerId";
+            this.uxPlayerId.PlaceholderText = "Enter Player ID";
+            this.uxPlayerId.Size = new System.Drawing.Size(135, 32);
+            this.uxPlayerId.TabIndex = 16;
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 603);
+            this.Controls.Add(this.uxPlayerId);
+            this.Controls.Add(this.uxScheduleWeek);
             this.Controls.Add(this.uxTop25List);
             this.Controls.Add(this.uxTop25Box);
             this.Controls.Add(this.uxTop25Button);
@@ -636,13 +631,9 @@
         private ColumnHeader columnHeader16;
         private ColumnHeader columnHeader17;
         private ColumnHeader columnHeader18;
-        private ColumnHeader columnHeader19;
         private ListView uxDefensiveList;
         private ColumnHeader columnHeader20;
         private ColumnHeader columnHeader21;
-        private ColumnHeader columnHeader22;
-        private ColumnHeader columnHeader23;
-        private ColumnHeader columnHeader24;
         private ColumnHeader columnHeader25;
         private ColumnHeader columnHeader26;
         private ColumnHeader columnHeader27;
@@ -671,5 +662,7 @@
         private ColumnHeader columnHeader41;
         private ColumnHeader columnHeader42;
         private ColumnHeader columnHeader43;
+        private TextBox uxScheduleWeek;
+        private TextBox uxPlayerId;
     }
 }

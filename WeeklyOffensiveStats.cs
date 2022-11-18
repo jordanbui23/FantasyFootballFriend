@@ -20,8 +20,7 @@ namespace FantasyFootballFriend {
         public int ReceivingYards { get; set; }
         public int ReceivingTouchdowns { get; set; }
         public int FumblesLost { get; set; }
-        public int StandardFantasyPoints { get; set; }
-        public int WeekNumber { get; set; }
+        public double StandardFantasyPoints { get; set; }
         public int GameId{ get; set; }
     }
 }

@@ -17,10 +17,11 @@ namespace FantasyFootballFriend {
 
         private void uxAddButton_Click(object sender, EventArgs e) {
             Add addForm = new Add();
-            //addForm.SetController(controller);
+            addForm.SetController(controller);
             addForm.Show();
         }
 
+        // Don't use and dont delete
         private void uxDeleteButton_Click(object sender, EventArgs e) {
             Delete deleteForm = new Delete();
             //deleteForm.SetController(controller);

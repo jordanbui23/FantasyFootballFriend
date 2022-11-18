@@ -13,5 +13,26 @@ namespace FantasyFootballFriend {
         public Add() {
             InitializeComponent();
         }
+        private Controller _controller;
+
+        public void SetController(Controller controller) {
+            _controller = controller;
+        }
+
+        private void uxOffensiveButton_Click(object sender, EventArgs e) {
+
+        }
+
+        private void uxDefensiveButton_Click(object sender, EventArgs e) {
+
+        }
+
+        private void uxPlayerButton_Click(object sender, EventArgs e) {
+
+        }
+
+        private void uxScheduleButton_Click(object sender, EventArgs e) {
+
+        }
     }
 }

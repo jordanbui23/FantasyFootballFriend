@@ -80,6 +80,7 @@
             this.uxDefensiveButton.TabIndex = 8;
             this.uxDefensiveButton.Text = "Add Defensive";
             this.uxDefensiveButton.UseVisualStyleBackColor = true;
+            this.uxDefensiveButton.Click += new System.EventHandler(this.uxDefensiveButton_Click);
             // 
             // uxScheduleButton
             // 
@@ -90,6 +91,7 @@
             this.uxScheduleButton.TabIndex = 7;
             this.uxScheduleButton.Text = "Add Schedule";
             this.uxScheduleButton.UseVisualStyleBackColor = true;
+            this.uxScheduleButton.Click += new System.EventHandler(this.uxScheduleButton_Click);
             // 
             // uxOffensiveButton
             // 
@@ -100,6 +102,7 @@
             this.uxOffensiveButton.TabIndex = 6;
             this.uxOffensiveButton.Text = "Add Offensive";
             this.uxOffensiveButton.UseVisualStyleBackColor = true;
+            this.uxOffensiveButton.Click += new System.EventHandler(this.uxOffensiveButton_Click);
             // 
             // uxPlayerButton
             // 
@@ -110,9 +113,11 @@
             this.uxPlayerButton.TabIndex = 5;
             this.uxPlayerButton.Text = "Add Player";
             this.uxPlayerButton.UseVisualStyleBackColor = true;
+            this.uxPlayerButton.Click += new System.EventHandler(this.uxPlayerButton_Click);
             // 
             // uxSubmitButton
             // 
+            this.uxSubmitButton.Enabled = false;
             this.uxSubmitButton.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.uxSubmitButton.Location = new System.Drawing.Point(300, 487);
             this.uxSubmitButton.Name = "uxSubmitButton";

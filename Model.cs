@@ -78,7 +78,7 @@ namespace FantasyFootballFriend {
             return players;
         }
 
-        public List<string[]> getTop(int week) {
+        public List<string[]> GetTop(int week) {
             using (SqlConnection connection = new SqlConnection(database)) {
                 using (SqlCommand command = new SqlCommand("GetTop25Scorers", connection)) {
                     command.CommandType = CommandType.StoredProcedure;
@@ -110,6 +110,124 @@ namespace FantasyFootballFriend {
                     }
                 }
                 
+            }
+        }
+
+        public List<Schedule> GetMatchups(int week) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetMatchupsForWeek", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("WeekNumber", week);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<Schedule> schedule = new List<Schedule>();
+                        int GameId = dataReader.GetOrdinal("GameId");
+                        int Week = dataReader.GetOrdinal("Week");
+                        int HomeTeam = dataReader.GetOrdinal("HomeTeam");
+                        int AwayTeam = dataReader.GetOrdinal("AwayTeam");
+                        int Stadium = dataReader.GetOrdinal("Stadium");
+                        while (dataReader.Read()) {
+                            Schedule player = new Schedule();
+                            player.GameId = dataReader.GetInt32(GameId);
+                            player.Week = dataReader.GetInt32(Week);
+                            player.HomeTeam = dataReader.GetString(HomeTeam);
+                            player.AwayTeam = dataReader.GetString(AwayTeam);
+                            player.Stadium = dataReader.GetString(Stadium);
+                            schedule.Add(player);
+                        }
+                        return schedule;
+                    }
+                }
+            }
+        }
+
+        public List<WeeklyDefensiveStats> GetDefense(string team) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetDefenseStatsForTeam", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("Team", team);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<WeeklyDefensiveStats> w = new List<WeeklyDefensiveStats>();
+                        int WeeklyId = dataReader.GetOrdinal("WeeklyId");
+                        int GameId = dataReader.GetOrdinal("GameId");
+                        int Team = dataReader.GetOrdinal("Team");
+                        int Sacks = dataReader.GetOrdinal("Sacks");
+                        int Interceptions = dataReader.GetOrdinal("Interceptions");
+                        int FumblesRecovered = dataReader.GetOrdinal("FumblesRecovered");
+                        int FumblesForced = dataReader.GetOrdinal("FumblesForced");
+                        int DefensiveTouchdowns = dataReader.GetOrdinal("DefensiveTouchdowns");
+                        int Safeties = dataReader.GetOrdinal("Safeties");
+                        int SpecialTeamsTouchdowns = dataReader.GetOrdinal("SpecialTeamsTouchdowns");
+                        int StandardFantasyPoints = dataReader.GetOrdinal("StandardFantasyPoints");
+                        while (dataReader.Read()) {
+                            WeeklyDefensiveStats wts = new WeeklyDefensiveStats();
+                            wts.WeeklyId = dataReader.GetInt32(WeeklyId);
+                            wts.GameId = dataReader.GetInt32(GameId);
+                            wts.Team = dataReader.GetString(Team);
+                            wts.Sacks = dataReader.GetInt32(Sacks);
+                            wts.Interceptions = dataReader.GetInt32(Interceptions);
+                            wts.FumblesRecovered = dataReader.GetInt32(FumblesRecovered);
+                            wts.FumblesForced = dataReader.GetInt32(FumblesForced);
+                            wts.DefensiveTouchdowns = dataReader.GetInt32(DefensiveTouchdowns);
+                            wts.Safeties = dataReader.GetInt32(Safeties);
+                            wts.SpecialTeamsTouchdowns = dataReader.GetInt32(SpecialTeamsTouchdowns);
+                            wts.StandardFantasyPoints = dataReader.GetInt32(StandardFantasyPoints);
+                            w.Add(wts);
+                        }
+                        return w;
+                    }
+                }
+            }
+        }
+
+        public List<WeeklyOffensiveStats> GetOffense(int id) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetOffenseStatsWithPlayerId", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("PlayerId", id);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<WeeklyOffensiveStats> w = new List<WeeklyOffensiveStats>();
+                        int OffensiveStatId = dataReader.GetOrdinal("OffensiveStatId");
+                        int PlayerId = dataReader.GetOrdinal("PlayerId");
+                        int PassingYards = dataReader.GetOrdinal("PassingYards");
+                        int PassingTouchdowns = dataReader.GetOrdinal("PassingTouchdowns");
+                        int PassingAttempts = dataReader.GetOrdinal("PassingAttempts");
+                        int Completions = dataReader.GetOrdinal("Completions");
+                        int RushingAttempts = dataReader.GetOrdinal("RushingAttempts");
+                        int RushingYards = dataReader.GetOrdinal("RushingYards");
+                        int RushingTouchdowns = dataReader.GetOrdinal("RushingTouchdowns");
+                        int Receptions = dataReader.GetOrdinal("Receptions");
+                        int Targets = dataReader.GetOrdinal("Targets");
+                        int ReceivingYards = dataReader.GetOrdinal("ReceivingYards");
+                        int ReceivingTouchdowns = dataReader.GetOrdinal("ReceivingTouchdowns");
+                        int FumblesLost = dataReader.GetOrdinal("FumblesLost");
+                        int StandardFantasyPoints = dataReader.GetOrdinal("StandardFantasyPoints");
+                        int GameId = dataReader.GetOrdinal("GameId");
+                        while (dataReader.Read()) {
+                            WeeklyOffensiveStats wts = new WeeklyOffensiveStats();
+                            wts.OffensiveStatId = dataReader.GetInt32(OffensiveStatId);
+                            wts.PlayerId = dataReader.GetInt32(PlayerId);
+                            wts.PassingYards = dataReader.GetInt32(PassingYards);
+                            wts.PassingTouchdowns = dataReader.GetInt32(PassingTouchdowns);
+                            wts.PassingAttempts = dataReader.GetInt32(PassingAttempts);
+                            wts.Completions = dataReader.GetInt32(Completions);
+                            wts.RushingAttempts = dataReader.GetInt32(RushingAttempts);
+                            wts.RushingYards = dataReader.GetInt32(RushingYards);
+                            wts.RushingTouchdowns = dataReader.GetInt32(RushingTouchdowns);
+                            wts.Receptions = dataReader.GetInt32(Receptions);
+                            wts.Targets = dataReader.GetInt32(Targets);
+                            wts.ReceivingYards = dataReader.GetInt32(ReceivingYards);
+                            wts.ReceivingTouchdowns = dataReader.GetInt32(ReceivingTouchdowns);
+                            wts.FumblesLost = dataReader.GetInt32(FumblesLost);
+                            wts.StandardFantasyPoints = dataReader.GetDouble(StandardFantasyPoints);
+                            wts.GameId = dataReader.GetInt32(GameId);
+                            w.Add(wts);
+                        }
+                        return w;
+                    }
+                }
             }
         }
     }

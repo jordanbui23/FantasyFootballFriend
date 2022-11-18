@@ -17,7 +17,19 @@ namespace FantasyFootballFriend {
         }
 
         public List<string[]> Top25(int week) {
-            return Model.getTop(week);
+            return Model.GetTop(week);
+        }
+
+        public List<Schedule> GetMatchups(int week) {
+            return Model.GetMatchups(week);
+        }
+
+        public List<WeeklyDefensiveStats> GetDefense(string team) {
+            return Model.GetDefense(team);
+        }
+
+        public List<WeeklyOffensiveStats> GetOffense(int id) {
+            return Model.GetOffense(id);
         }
     }
 }

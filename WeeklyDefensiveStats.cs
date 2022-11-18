@@ -14,7 +14,7 @@ namespace FantasyFootballFriend {
         public string Team { get; set; }
         public int Sacks { get; set; }
         public int Interceptions { get; set; }
-        public int FumbesRecovered { get; set; }
+        public int FumblesRecovered { get; set; }
         public int FumblesForced { get; set; }
         public int DefensiveTouchdowns { get; set; }
         public int Safeties { get; set; }

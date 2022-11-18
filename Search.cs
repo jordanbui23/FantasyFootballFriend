@@ -91,6 +91,78 @@ namespace FantasyFootballFriend {
                         uxPlayerList.Items.Add(item);
                     }
                 }
+            } else if (uxDefensiveList.Visible) {
+                if (uxTeamComboBox.Text != "") {
+                    string team = uxTeamComboBox.Text;
+                    _defensiveList = _controller.GetDefense(team);
+                    foreach (WeeklyDefensiveStats d in _defensiveList) {
+                        string[] row = new string[] { d.WeeklyId.ToString(),
+                            d.GameId.ToString(),
+                            d.Team,
+                            d.Sacks.ToString(),
+                            d.Interceptions.ToString(),
+                            d.FumblesRecovered.ToString(),
+                            d.FumblesForced.ToString(),
+                            d.DefensiveTouchdowns.ToString(),
+                            d.Safeties.ToString(),
+                            d.SpecialTeamsTouchdowns.ToString(),
+                            d.StandardFantasyPoints.ToString()
+                        };
+                        ListViewItem item = new ListViewItem(row);
+                        uxDefensiveList.Items.Add(item);
+                    }
+                } else {
+                    MessageBox.Show("Input a team please");
+                }
+            } else if (uxOffensiveList.Visible) {
+                if (uxPlayerId.Text != "") {
+                    string id = uxPlayerId.Text;
+                    _offensiveList = _controller.GetOffense(Int32.Parse(id));
+                    foreach (WeeklyOffensiveStats o in _offensiveList) {
+                        string[] row = new string[] { o.OffensiveStatId.ToString(),
+                            o.PlayerId.ToString(),
+                            o.PassingYards.ToString(),
+                            o.PassingTouchdowns.ToString(),
+                            o.PassingAttempts.ToString(),
+                            o.Completions.ToString(),
+                            o.RushingAttempts.ToString(),
+                            o.RushingYards.ToString(),
+                            o.RushingTouchdowns.ToString(),
+                            o.Receptions.ToString(),
+                            o.Targets.ToString(),
+                            o.ReceivingYards.ToString(),
+                            o.ReceivingTouchdowns.ToString(),
+                            o.FumblesLost.ToString(),
+                            o.StandardFantasyPoints.ToString(),
+                            o.GameId.ToString()
+                        };
+                        ListViewItem item = new ListViewItem(row);
+                        uxOffensiveList.Items.Add(item);
+                    }
+                } else {
+                    MessageBox.Show("Input a week please");
+                }
+            } else if (uxScheduleList.Visible) {
+                if (uxScheduleWeek.Text != "") {
+                    string weekNum = uxScheduleWeek.Text;
+                    _scheduleList = _controller.GetMatchups(Int32.Parse(weekNum));
+                    foreach (Schedule s in _scheduleList) {
+                        string[] row = new string[] { s.GameId.ToString(), s.Week.ToString(), s.AwayTeam, s.HomeTeam, s.Stadium };
+                        ListViewItem item = new ListViewItem(row);
+                        uxScheduleList.Items.Add(item);
+                    }
+                } else {
+                    MessageBox.Show("Input a week please");
+                }
+            } else if (uxTop25List.Visible) {
+                if (uxTop25Box.Text != "") {
+                    _top25 = _controller.Top25(Int32.Parse(uxTop25Box.Text));
+                    foreach (string[] list in _top25) {
+                        uxTop25List.Items.Add(new ListViewItem(list));
+                    }
+                } else {
+                    MessageBox.Show("Input a week please");
+                }
             }
         }
 
@@ -99,16 +171,8 @@ namespace FantasyFootballFriend {
             uxPlayerList.Visible = false;
             uxOffensiveList.Visible = false;
             uxScheduleList.Visible = false;
-            uxSubmitButton.Enabled = true;  //FIX TOMORROWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+            uxSubmitButton.Enabled = true;
             uxTop25List.Visible = true;
-            if (uxTop25Box.Text != "") {
-                _top25 = _controller.Top25(Int32.Parse(uxTop25Box.Text));
-                foreach(string[] list in _top25) {
-                    uxTop25List.Items.Add(new ListViewItem(list));
-                }
-            } else {
-                MessageBox.Show("Fucking dumbass");
-            }
         }
     }
 }
