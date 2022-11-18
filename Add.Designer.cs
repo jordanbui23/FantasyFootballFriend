@@ -125,10 +125,10 @@
             this.uxSubmitButton.TabIndex = 9;
             this.uxSubmitButton.Text = "Submit";
             this.uxSubmitButton.UseVisualStyleBackColor = true;
+            this.uxSubmitButton.Click += new System.EventHandler(this.uxSubmitButton_Click);
             // 
             // offStatId
             // 
-            this.offStatId.Enabled = false;
             this.offStatId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offStatId.Location = new System.Drawing.Point(33, 68);
             this.offStatId.Name = "offStatId";
@@ -138,7 +138,6 @@
             // 
             // offPlayerId
             // 
-            this.offPlayerId.Enabled = false;
             this.offPlayerId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offPlayerId.Location = new System.Drawing.Point(33, 101);
             this.offPlayerId.Name = "offPlayerId";
@@ -148,7 +147,6 @@
             // 
             // offGameId
             // 
-            this.offGameId.Enabled = false;
             this.offGameId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offGameId.Location = new System.Drawing.Point(33, 134);
             this.offGameId.Name = "offGameId";
@@ -158,7 +156,6 @@
             // 
             // offPassingYards
             // 
-            this.offPassingYards.Enabled = false;
             this.offPassingYards.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offPassingYards.Location = new System.Drawing.Point(33, 167);
             this.offPassingYards.Name = "offPassingYards";
@@ -168,7 +165,6 @@
             // 
             // offPassingTouchdowns
             // 
-            this.offPassingTouchdowns.Enabled = false;
             this.offPassingTouchdowns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offPassingTouchdowns.Location = new System.Drawing.Point(33, 201);
             this.offPassingTouchdowns.Name = "offPassingTouchdowns";
@@ -178,7 +174,6 @@
             // 
             // offPassingAttempts
             // 
-            this.offPassingAttempts.Enabled = false;
             this.offPassingAttempts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offPassingAttempts.Location = new System.Drawing.Point(33, 234);
             this.offPassingAttempts.Name = "offPassingAttempts";
@@ -188,7 +183,6 @@
             // 
             // offCompletions
             // 
-            this.offCompletions.Enabled = false;
             this.offCompletions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offCompletions.Location = new System.Drawing.Point(33, 267);
             this.offCompletions.Name = "offCompletions";
@@ -198,7 +192,6 @@
             // 
             // offRushingAttempts
             // 
-            this.offRushingAttempts.Enabled = false;
             this.offRushingAttempts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offRushingAttempts.Location = new System.Drawing.Point(33, 300);
             this.offRushingAttempts.Name = "offRushingAttempts";
@@ -208,7 +201,6 @@
             // 
             // offRushingYards
             // 
-            this.offRushingYards.Enabled = false;
             this.offRushingYards.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offRushingYards.Location = new System.Drawing.Point(33, 333);
             this.offRushingYards.Name = "offRushingYards";
@@ -218,7 +210,6 @@
             // 
             // offRushingTouchdowns
             // 
-            this.offRushingTouchdowns.Enabled = false;
             this.offRushingTouchdowns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offRushingTouchdowns.Location = new System.Drawing.Point(33, 366);
             this.offRushingTouchdowns.Name = "offRushingTouchdowns";
@@ -228,7 +219,6 @@
             // 
             // offReceptions
             // 
-            this.offReceptions.Enabled = false;
             this.offReceptions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offReceptions.Location = new System.Drawing.Point(33, 399);
             this.offReceptions.Name = "offReceptions";
@@ -238,7 +228,6 @@
             // 
             // offTargets
             // 
-            this.offTargets.Enabled = false;
             this.offTargets.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offTargets.Location = new System.Drawing.Point(33, 432);
             this.offTargets.Name = "offTargets";
@@ -248,7 +237,6 @@
             // 
             // offReceivingYards
             // 
-            this.offReceivingYards.Enabled = false;
             this.offReceivingYards.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offReceivingYards.Location = new System.Drawing.Point(33, 465);
             this.offReceivingYards.Name = "offReceivingYards";
@@ -258,7 +246,6 @@
             // 
             // offReceivingTouchdowns
             // 
-            this.offReceivingTouchdowns.Enabled = false;
             this.offReceivingTouchdowns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offReceivingTouchdowns.Location = new System.Drawing.Point(33, 498);
             this.offReceivingTouchdowns.Name = "offReceivingTouchdowns";
@@ -268,7 +255,6 @@
             // 
             // offFumblesLost
             // 
-            this.offFumblesLost.Enabled = false;
             this.offFumblesLost.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offFumblesLost.Location = new System.Drawing.Point(33, 531);
             this.offFumblesLost.Name = "offFumblesLost";
@@ -278,7 +264,6 @@
             // 
             // offStandardFantasyPoints
             // 
-            this.offStandardFantasyPoints.Enabled = false;
             this.offStandardFantasyPoints.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.offStandardFantasyPoints.Location = new System.Drawing.Point(33, 564);
             this.offStandardFantasyPoints.Name = "offStandardFantasyPoints";
@@ -308,7 +293,6 @@
             // 
             // defFantasyPoints
             // 
-            this.defFantasyPoints.Enabled = false;
             this.defFantasyPoints.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defFantasyPoints.Location = new System.Drawing.Point(300, 399);
             this.defFantasyPoints.Name = "defFantasyPoints";
@@ -318,7 +302,6 @@
             // 
             // defSpecialTeamsTouchdowns
             // 
-            this.defSpecialTeamsTouchdowns.Enabled = false;
             this.defSpecialTeamsTouchdowns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defSpecialTeamsTouchdowns.Location = new System.Drawing.Point(300, 366);
             this.defSpecialTeamsTouchdowns.Name = "defSpecialTeamsTouchdowns";
@@ -328,7 +311,6 @@
             // 
             // defSafeties
             // 
-            this.defSafeties.Enabled = false;
             this.defSafeties.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defSafeties.Location = new System.Drawing.Point(300, 333);
             this.defSafeties.Name = "defSafeties";
@@ -338,7 +320,6 @@
             // 
             // defTouchdowns
             // 
-            this.defTouchdowns.Enabled = false;
             this.defTouchdowns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defTouchdowns.Location = new System.Drawing.Point(300, 300);
             this.defTouchdowns.Name = "defTouchdowns";
@@ -348,7 +329,6 @@
             // 
             // defFumblesForced
             // 
-            this.defFumblesForced.Enabled = false;
             this.defFumblesForced.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defFumblesForced.Location = new System.Drawing.Point(300, 267);
             this.defFumblesForced.Name = "defFumblesForced";
@@ -358,7 +338,6 @@
             // 
             // defFumblesRecovered
             // 
-            this.defFumblesRecovered.Enabled = false;
             this.defFumblesRecovered.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defFumblesRecovered.Location = new System.Drawing.Point(300, 234);
             this.defFumblesRecovered.Name = "defFumblesRecovered";
@@ -368,7 +347,6 @@
             // 
             // defInterceptions
             // 
-            this.defInterceptions.Enabled = false;
             this.defInterceptions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defInterceptions.Location = new System.Drawing.Point(300, 201);
             this.defInterceptions.Name = "defInterceptions";
@@ -378,7 +356,6 @@
             // 
             // defSacks
             // 
-            this.defSacks.Enabled = false;
             this.defSacks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defSacks.Location = new System.Drawing.Point(300, 167);
             this.defSacks.Name = "defSacks";
@@ -388,7 +365,6 @@
             // 
             // defTeamWeeklyId
             // 
-            this.defTeamWeeklyId.Enabled = false;
             this.defTeamWeeklyId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defTeamWeeklyId.Location = new System.Drawing.Point(300, 134);
             this.defTeamWeeklyId.Name = "defTeamWeeklyId";
@@ -398,7 +374,6 @@
             // 
             // defGameId
             // 
-            this.defGameId.Enabled = false;
             this.defGameId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defGameId.Location = new System.Drawing.Point(300, 101);
             this.defGameId.Name = "defGameId";
@@ -408,7 +383,6 @@
             // 
             // defWeeklyId
             // 
-            this.defWeeklyId.Enabled = false;
             this.defWeeklyId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.defWeeklyId.Location = new System.Drawing.Point(300, 68);
             this.defWeeklyId.Name = "defWeeklyId";
@@ -428,7 +402,6 @@
             // 
             // plaPosition
             // 
-            this.plaPosition.Enabled = false;
             this.plaPosition.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.plaPosition.Location = new System.Drawing.Point(562, 201);
             this.plaPosition.Name = "plaPosition";
@@ -438,7 +411,6 @@
             // 
             // plaTeam
             // 
-            this.plaTeam.Enabled = false;
             this.plaTeam.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.plaTeam.Location = new System.Drawing.Point(562, 167);
             this.plaTeam.Name = "plaTeam";
@@ -448,7 +420,6 @@
             // 
             // plaPlayerName
             // 
-            this.plaPlayerName.Enabled = false;
             this.plaPlayerName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.plaPlayerName.Location = new System.Drawing.Point(562, 134);
             this.plaPlayerName.Name = "plaPlayerName";
@@ -458,7 +429,6 @@
             // 
             // plaEspnId
             // 
-            this.plaEspnId.Enabled = false;
             this.plaEspnId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.plaEspnId.Location = new System.Drawing.Point(562, 101);
             this.plaEspnId.Name = "plaEspnId";
@@ -468,7 +438,6 @@
             // 
             // plaPlayerId
             // 
-            this.plaPlayerId.Enabled = false;
             this.plaPlayerId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.plaPlayerId.Location = new System.Drawing.Point(562, 68);
             this.plaPlayerId.Name = "plaPlayerId";
@@ -488,7 +457,6 @@
             // 
             // schStadium
             // 
-            this.schStadium.Enabled = false;
             this.schStadium.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.schStadium.Location = new System.Drawing.Point(834, 201);
             this.schStadium.Name = "schStadium";
@@ -498,7 +466,6 @@
             // 
             // schHomeTeam
             // 
-            this.schHomeTeam.Enabled = false;
             this.schHomeTeam.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.schHomeTeam.Location = new System.Drawing.Point(834, 167);
             this.schHomeTeam.Name = "schHomeTeam";
@@ -508,7 +475,6 @@
             // 
             // schAwayTeam
             // 
-            this.schAwayTeam.Enabled = false;
             this.schAwayTeam.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.schAwayTeam.Location = new System.Drawing.Point(834, 134);
             this.schAwayTeam.Name = "schAwayTeam";
@@ -518,7 +484,6 @@
             // 
             // schWeek
             // 
-            this.schWeek.Enabled = false;
             this.schWeek.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.schWeek.Location = new System.Drawing.Point(834, 101);
             this.schWeek.Name = "schWeek";
@@ -528,7 +493,6 @@
             // 
             // schGameId
             // 
-            this.schGameId.Enabled = false;
             this.schGameId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.schGameId.Location = new System.Drawing.Point(834, 68);
             this.schGameId.Name = "schGameId";

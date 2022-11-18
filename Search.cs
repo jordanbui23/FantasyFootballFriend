@@ -21,6 +21,9 @@ namespace FantasyFootballFriend {
         private List<WeeklyDefensiveStats> _defensiveList;
         private List<Schedule> _scheduleList;
         private List<string[]> _top25;
+        private List<string[]> _totalPoints;
+        private List<string[]> _highestScorer;
+        private List<string[]> _topDefense;
 
         public void SetController(Controller controller) {
             _controller = controller;
@@ -33,7 +36,9 @@ namespace FantasyFootballFriend {
             uxScheduleList.Visible = false;
             uxSubmitButton.Enabled = true;
             uxTop25List.Visible = false;
-
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
         }
 
         private void uxOffensiveButton_Click(object sender, EventArgs e) {
@@ -43,6 +48,9 @@ namespace FantasyFootballFriend {
             uxScheduleList.Visible = false;
             uxSubmitButton.Enabled = true;
             uxTop25List.Visible = false;
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
         }
 
         private void uxEspnButton_Click(object sender, EventArgs e) { // Schedule button but it wont let me change the name for the click event
@@ -52,6 +60,9 @@ namespace FantasyFootballFriend {
             uxOffensiveList.Visible = false;
             uxSubmitButton.Enabled = true;
             uxTop25List.Visible = false;
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
         }
 
         private void uxDefensiveButton_Click(object sender, EventArgs e) {
@@ -61,6 +72,9 @@ namespace FantasyFootballFriend {
             uxScheduleList.Visible = false;
             uxSubmitButton.Enabled = true;
             uxTop25List.Visible = false;
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
         }
 
         private void uxSubmitButton_Click(object sender, EventArgs e) {
@@ -163,6 +177,33 @@ namespace FantasyFootballFriend {
                 } else {
                     MessageBox.Show("Input a week please");
                 }
+            } else if (uxTotalPointsList.Visible) {
+                if (uxTotalPointsPlayer.Text != "") {
+                    _totalPoints = _controller.GetTotalPoints(uxTotalPointsPlayer.Text);
+                    foreach (string[] list in _totalPoints) {
+                        uxTotalPointsList.Items.Add(new ListViewItem(list));
+                    }
+                } else {
+                    MessageBox.Show("Input a Name please");
+                }
+            } else if (uxHighestScorerList.Visible) {
+                if (uxHighestScorerBox.Text != "") {
+                    _highestScorer = _controller.GetHighestScorer(Int32.Parse(uxHighestScorerBox.Text));
+                    foreach (string[] list in _highestScorer) {
+                        uxHighestScorerList.Items.Add(new ListViewItem(list));
+                    }
+                } else {
+                    MessageBox.Show("Input a Week please");
+                }
+            } else if (uxTopDefenseList.Visible) {
+                if (uxTopDefWeek.Text != "") {
+                    _topDefense = _controller.GetTopDefense(Int32.Parse(uxTopDefWeek.Text));
+                    foreach (string[] list in _topDefense) {
+                        uxTopDefenseList.Items.Add(new ListViewItem(list));
+                    }
+                } else {
+                    MessageBox.Show("Input a Week please");
+                }
             }
         }
 
@@ -173,6 +214,45 @@ namespace FantasyFootballFriend {
             uxScheduleList.Visible = false;
             uxSubmitButton.Enabled = true;
             uxTop25List.Visible = true;
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
+        }
+
+        private void uxTotalPoints_Click(object sender, EventArgs e) {
+            uxTotalPointsList.Visible = true;
+            uxDefensiveList.Visible = false;
+            uxPlayerList.Visible = false;
+            uxOffensiveList.Visible = false;
+            uxScheduleList.Visible = false;
+            uxSubmitButton.Enabled = true;
+            uxTop25List.Visible = false;
+            uxTopDefenseList.Visible = false;
+            uxHighestScorerList.Visible = false;
+        }
+
+        private void uxHighestScorerButton_Click(object sender, EventArgs e) {
+            uxHighestScorerList.Visible = true;
+            uxTotalPointsList.Visible = false;
+            uxDefensiveList.Visible = false;
+            uxPlayerList.Visible = false;
+            uxOffensiveList.Visible = false;
+            uxScheduleList.Visible = false;
+            uxSubmitButton.Enabled = true;
+            uxTop25List.Visible = false;
+            uxTopDefenseList.Visible = false;
+        }
+
+        private void uxTopDefButton_Click(object sender, EventArgs e) {
+            uxTopDefenseList.Visible = true;
+            uxHighestScorerList.Visible = false;
+            uxTotalPointsList.Visible = false;
+            uxDefensiveList.Visible = false;
+            uxPlayerList.Visible = false;
+            uxOffensiveList.Visible = false;
+            uxScheduleList.Visible = false;
+            uxSubmitButton.Enabled = true;
+            uxTop25List.Visible = false;
         }
     }
 }

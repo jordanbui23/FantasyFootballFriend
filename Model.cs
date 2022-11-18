@@ -230,5 +230,84 @@ namespace FantasyFootballFriend {
                 }
             }
         }
+
+        public List<string[]> GetTotalPoints(string name) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetTotalPointsForPlayer", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("SelectedPlayer", name);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<string[]> ret = new List<string[]>();
+                        int PlayerID = dataReader.GetOrdinal("PlayerID");
+                        int PlayerName = dataReader.GetOrdinal("PlayerName");
+                        int TotalPoints = dataReader.GetOrdinal("TotalPoints");
+                        int Team = dataReader.GetOrdinal("Team");
+                        while (dataReader.Read()) {
+                            string[] temp = new string[4];
+                            temp[0] = (dataReader.GetInt32(PlayerID).ToString());
+                            temp[1] = (dataReader.GetString(PlayerName).ToString());
+                            temp[2] = (dataReader.GetDouble(TotalPoints).ToString());
+                            temp[3] = (dataReader.GetString(Team).ToString());
+                            ret.Add(temp);
+                        }
+                        return ret;
+                    }
+                }
+
+            }
+        }
+
+        public List<string[]> GetHighestScorer(int week) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetTopPlayerOnEachTeamForWeek", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("WeekNumber", week);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<string[]> ret = new List<string[]>();
+                        int HighestScorer = dataReader.GetOrdinal("Highest Scorer On Team");
+                        int TotalPoints = dataReader.GetOrdinal("TotalPoints");
+                        int Team = dataReader.GetOrdinal("Team");
+                        while (dataReader.Read()) {
+                            string[] temp = new string[3];
+                            temp[0] = (dataReader.GetString(HighestScorer).ToString());
+                            temp[1] = (dataReader.GetDouble(TotalPoints).ToString());
+                            temp[2] = (dataReader.GetString(Team).ToString());
+                            ret.Add(temp);
+                        }
+                        return ret;
+                    }
+                }
+
+            }
+        }
+
+        public List<string[]> GetTopDefense(int week) {
+            using (SqlConnection connection = new SqlConnection(database)) {
+                using (SqlCommand command = new SqlCommand("GetTopRankedDefenses", connection)) {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("WeekNumber", week);
+                    connection.Open();
+                    using (var dataReader = command.ExecuteReader()) {
+                        List<string[]> ret = new List<string[]>();
+                        int Team = dataReader.GetOrdinal("Team");
+                        int StandardFantasyPoints = dataReader.GetOrdinal("StandardFantasyPoints");
+                        int TeamRank = dataReader.GetOrdinal("Team Rank");
+                        int Week = dataReader.GetOrdinal("Week");
+                        while (dataReader.Read()) {
+                            string[] temp = new string[4];
+                            temp[0] = (dataReader.GetString(Team).ToString());
+                            temp[1] = (dataReader.GetInt32(StandardFantasyPoints).ToString());
+                            temp[2] = (dataReader.GetInt64(TeamRank).ToString());
+                            temp[3] = (dataReader.GetInt32(Week).ToString());
+                            ret.Add(temp);
+                        }
+                        return ret;
+                    }
+                }
+
+            }
+        }
     }
 }
