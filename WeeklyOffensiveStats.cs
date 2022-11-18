@@ -8,9 +8,6 @@ namespace FantasyFootballFriend {
     public class WeeklyOffensiveStats {
         public int OffensiveStatId { get; set; }
         public int PlayerId { get; set; }
-        public string PlayerName { get; set; }
-        public string Position { get; set; }
-        public string Team { get; set; }
         public int PassingYards { get; set; }
         public int PassingTouchdowns { get; set; }
         public int PassingAttempts { get; set; }
@@ -24,7 +21,7 @@ namespace FantasyFootballFriend {
         public int ReceivingTouchdowns { get; set; }
         public int FumblesLost { get; set; }
         public int StandardFantasyPoints { get; set; }
-        public int Week { get; set; }
-
+        public int WeekNumber { get; set; }
+        public int GameId{ get; set; }
     }
 }
