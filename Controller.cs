@@ -12,7 +12,7 @@ namespace FantasyFootballFriend {
             Model = new Model(@"Server=(localdb)\MSSQLLocalDb;Database=Fantasy;Integrated Security=SSPI;");
         }
 
-        public List<Player> Search() {
+        public List<Player> SearchPlayersTable() {
             return Model.GetPlayers();
         }
 
