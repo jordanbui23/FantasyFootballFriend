@@ -111,6 +111,8 @@
             this.columnHeader48 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader49 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader50 = new System.Windows.Forms.ColumnHeader();
+            this.uxPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.uxPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // uxPlayerList
@@ -132,6 +134,7 @@
             this.uxPlayerList.TabIndex = 0;
             this.uxPlayerList.UseCompatibleStateImageBehavior = false;
             this.uxPlayerList.View = System.Windows.Forms.View.Details;
+            this.uxPlayerList.SelectedIndexChanged += new System.EventHandler(this.uxPlayerList_SelectedIndexChanged);
             // 
             // uxPlayerIdColumn
             // 
@@ -279,6 +282,7 @@
             this.uxOffensiveList.TabIndex = 7;
             this.uxOffensiveList.UseCompatibleStateImageBehavior = false;
             this.uxOffensiveList.View = System.Windows.Forms.View.Details;
+            this.uxOffensiveList.SelectedIndexChanged += new System.EventHandler(this.uxOffensiveList_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -501,9 +505,9 @@
             // uxTop25Button
             // 
             this.uxTop25Button.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTop25Button.Location = new System.Drawing.Point(1190, 283);
+            this.uxTop25Button.Location = new System.Drawing.Point(1337, 245);
             this.uxTop25Button.Name = "uxTop25Button";
-            this.uxTop25Button.Size = new System.Drawing.Size(141, 33);
+            this.uxTop25Button.Size = new System.Drawing.Size(135, 33);
             this.uxTop25Button.TabIndex = 12;
             this.uxTop25Button.Text = "Get Top Performers";
             this.uxTop25Button.UseVisualStyleBackColor = true;
@@ -512,10 +516,10 @@
             // uxTop25Box
             // 
             this.uxTop25Box.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTop25Box.Location = new System.Drawing.Point(1190, 322);
+            this.uxTop25Box.Location = new System.Drawing.Point(1337, 283);
             this.uxTop25Box.Name = "uxTop25Box";
             this.uxTop25Box.PlaceholderText = "Enter Week";
-            this.uxTop25Box.Size = new System.Drawing.Size(141, 29);
+            this.uxTop25Box.Size = new System.Drawing.Size(135, 29);
             this.uxTop25Box.TabIndex = 13;
             // 
             // uxTop25List
@@ -541,6 +545,7 @@
             this.uxTop25List.TabIndex = 14;
             this.uxTop25List.UseCompatibleStateImageBehavior = false;
             this.uxTop25List.View = System.Windows.Forms.View.Details;
+            this.uxTop25List.SelectedIndexChanged += new System.EventHandler(this.uxTop25List_SelectedIndexChanged);
             // 
             // columnHeader4
             // 
@@ -599,7 +604,7 @@
             // uxTotalPoints
             // 
             this.uxTotalPoints.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTotalPoints.Location = new System.Drawing.Point(1052, 283);
+            this.uxTotalPoints.Location = new System.Drawing.Point(1337, 318);
             this.uxTotalPoints.Name = "uxTotalPoints";
             this.uxTotalPoints.Size = new System.Drawing.Size(132, 33);
             this.uxTotalPoints.TabIndex = 17;
@@ -610,7 +615,7 @@
             // uxTotalPointsPlayer
             // 
             this.uxTotalPointsPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTotalPointsPlayer.Location = new System.Drawing.Point(1052, 322);
+            this.uxTotalPointsPlayer.Location = new System.Drawing.Point(1337, 357);
             this.uxTotalPointsPlayer.Name = "uxTotalPointsPlayer";
             this.uxTotalPointsPlayer.PlaceholderText = "Enter Name";
             this.uxTotalPointsPlayer.Size = new System.Drawing.Size(132, 29);
@@ -635,6 +640,7 @@
             this.uxTotalPointsList.TabIndex = 19;
             this.uxTotalPointsList.UseCompatibleStateImageBehavior = false;
             this.uxTotalPointsList.View = System.Windows.Forms.View.Details;
+            this.uxTotalPointsList.SelectedIndexChanged += new System.EventHandler(this.uxTotalPointsList_SelectedIndexChanged);
             // 
             // columnHeader19
             // 
@@ -657,7 +663,7 @@
             // uxHighestScorerBox
             // 
             this.uxHighestScorerBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxHighestScorerBox.Location = new System.Drawing.Point(911, 322);
+            this.uxHighestScorerBox.Location = new System.Drawing.Point(1337, 431);
             this.uxHighestScorerBox.Name = "uxHighestScorerBox";
             this.uxHighestScorerBox.PlaceholderText = "Enter Week";
             this.uxHighestScorerBox.Size = new System.Drawing.Size(135, 29);
@@ -666,7 +672,7 @@
             // uxHighestScorerButton
             // 
             this.uxHighestScorerButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxHighestScorerButton.Location = new System.Drawing.Point(911, 283);
+            this.uxHighestScorerButton.Location = new System.Drawing.Point(1337, 392);
             this.uxHighestScorerButton.Name = "uxHighestScorerButton";
             this.uxHighestScorerButton.Size = new System.Drawing.Size(135, 33);
             this.uxHighestScorerButton.TabIndex = 20;
@@ -692,6 +698,7 @@
             this.uxHighestScorerList.TabIndex = 22;
             this.uxHighestScorerList.UseCompatibleStateImageBehavior = false;
             this.uxHighestScorerList.View = System.Windows.Forms.View.Details;
+            this.uxHighestScorerList.SelectedIndexChanged += new System.EventHandler(this.uxHighestScorerList_SelectedIndexChanged);
             // 
             // columnHeader24
             // 
@@ -710,7 +717,7 @@
             // uxTopDefWeek
             // 
             this.uxTopDefWeek.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTopDefWeek.Location = new System.Drawing.Point(1337, 322);
+            this.uxTopDefWeek.Location = new System.Drawing.Point(1337, 210);
             this.uxTopDefWeek.Name = "uxTopDefWeek";
             this.uxTopDefWeek.PlaceholderText = "Enter Week";
             this.uxTopDefWeek.Size = new System.Drawing.Size(135, 29);
@@ -719,7 +726,7 @@
             // uxTopDefButton
             // 
             this.uxTopDefButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTopDefButton.Location = new System.Drawing.Point(1337, 283);
+            this.uxTopDefButton.Location = new System.Drawing.Point(1337, 171);
             this.uxTopDefButton.Name = "uxTopDefButton";
             this.uxTopDefButton.Size = new System.Drawing.Size(135, 33);
             this.uxTopDefButton.TabIndex = 23;
@@ -766,11 +773,21 @@
             // 
             this.columnHeader50.Text = "Week";
             // 
+            // uxPictureBox
+            // 
+            this.uxPictureBox.Location = new System.Drawing.Point(935, 198);
+            this.uxPictureBox.Name = "uxPictureBox";
+            this.uxPictureBox.Size = new System.Drawing.Size(300, 280);
+            this.uxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.uxPictureBox.TabIndex = 26;
+            this.uxPictureBox.TabStop = false;
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1484, 603);
+            this.ClientSize = new System.Drawing.Size(1490, 603);
+            this.Controls.Add(this.uxPictureBox);
             this.Controls.Add(this.uxTopDefenseList);
             this.Controls.Add(this.uxTopDefWeek);
             this.Controls.Add(this.uxTopDefButton);
@@ -799,6 +816,7 @@
             this.Controls.Add(this.uxPlayerList);
             this.Name = "Search";
             this.Text = "Search";
+            ((System.ComponentModel.ISupportInitialize)(this.uxPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -886,5 +904,6 @@
         private ColumnHeader columnHeader48;
         private ColumnHeader columnHeader49;
         private ColumnHeader columnHeader50;
+        private PictureBox uxPictureBox;
     }
 }

@@ -460,11 +460,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project For Real\\FantasyFootballFriend\\FantasyFootballFriend.csproj",
+      "projectUniqueName": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project\\FantasyFootballFriend\\FantasyFootballFriend.csproj",
       "projectName": "FantasyFootballFriend",
-      "projectPath": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project For Real\\FantasyFootballFriend\\FantasyFootballFriend.csproj",
+      "projectPath": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project\\FantasyFootballFriend\\FantasyFootballFriend.csproj",
       "packagesPath": "C:\\Users\\jbui\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project For Real\\FantasyFootballFriend\\obj\\",
+      "outputPath": "C:\\Users\\jbui\\OneDrive\\Desktop\\Classes\\CIS 560\\Final Project\\FantasyFootballFriend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
